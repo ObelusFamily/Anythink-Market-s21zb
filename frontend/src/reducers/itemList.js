@@ -12,7 +12,6 @@ import {
   PROFILE_FAVORITES_PAGE_UNLOADED,
 } from "../constants/actionTypes";
 
-
 const reducer = (state = {}, action) => {
   switch (action.type) {
     case ITEM_FAVORITED:

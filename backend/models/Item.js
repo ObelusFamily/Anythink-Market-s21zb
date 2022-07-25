@@ -24,10 +24,6 @@ ItemSchema.pre("validate", function(next) {
     this.slugify();
   }
 
-  if (!this.image) {
-    this.image = '../imgs/placeholder.png';
-  }
-
   next();
 });
 
