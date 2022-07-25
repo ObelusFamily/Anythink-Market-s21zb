@@ -20,7 +20,7 @@ const reducer = (state = {}, action) => {
       return {
         ...state,
         items: state.items.map((item) => {
-          if (!item.image) {
+          if (item.image.includes('placeholder')) {
             item.image = temp_pic;
           }
           if (item.slug === action.payload.item.slug) {
