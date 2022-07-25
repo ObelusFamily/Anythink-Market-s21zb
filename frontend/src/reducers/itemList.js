@@ -11,6 +11,7 @@ import {
   PROFILE_FAVORITES_PAGE_LOADED,
   PROFILE_FAVORITES_PAGE_UNLOADED,
 } from "../constants/actionTypes";
+import temp_pic from "../imgs/placeholder.png";
 
 const reducer = (state = {}, action) => {
   switch (action.type) {
@@ -19,6 +20,9 @@ const reducer = (state = {}, action) => {
       return {
         ...state,
         items: state.items.map((item) => {
+          if (!item.image) {
+            item.image = temp_pic;
+          }
           if (item.slug === action.payload.item.slug) {
             return {
               ...item,
